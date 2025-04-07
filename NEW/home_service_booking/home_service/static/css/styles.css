@@ -1,0 +1,236 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+}
+h2 {
+    color: #333;
+}
+button {
+    background: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+/* General Styles */
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: url("../images/hero-bg.jpg") no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.3rem;
+}
+
+/* Services Section */
+.services {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* Service Cards */
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.service-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.service-item a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+/* Ensure the navbar spans the full width */
+.navbar {
+    width: 100%;
+}
+
+/* Remove list bullets from navbar */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    list-style: none; /* Removes bullets */
+    padding-left: 0;
+}
+
+/* Fix navbar brand alignment */
+.navbar-brand {
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+/* Fix navbar position */
+.navbar {
+    width: 100%;
+    position: fixed; /* Make it stick to the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+/* Prevent content from hiding behind navbar */
+body {
+    margin: 0;
+    padding-top: 60px; /* Adjust based on navbar height */
+}
+
+/* === Custom Fonts === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* === Navbar Styling === */
+.navbar {
+    background: linear-gradient(90deg, #ff6b6b, #ff8e53);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #fff !important;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #ffe135 !important;
+}
+
+/* === Heading & Service Cards === */
+h1, h2, h3 {
+    font-weight: 700;
+    color: #222;
+}
+
+.service-card {
+    background: linear-gradient(45deg, #f9f9f9, #eaeaea);
+    border-radius: 12px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+}
+/* Global Styles */
+body {
+    background: linear-gradient(to right, #ff9966, #ff5e62); /* Nice gradient */
+    color: white; /* Change text color */
+    font-family: 'Poppins', sans-serif; /* Modern font */
+}
+
+/* Card Styling for Services */
+.card {
+    background: white;
+    border-radius: 15px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero Section */
+.hero-section {
+    background: url("{% static 'images/hero-bg.jpg' %}") no-repeat center center;
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Change navbar colors */
+.navbar {
+    background: #ff4b5c !important;
+}
+/* Hero Section */
+.hero-bg {
+    background: url('/static/images/home_banner.jpg') no-repeat center center/cover;
+    height: 400px;
+}
+
+/* Services */
+.card {
+    border: none;
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-bg text-center text-white d-flex align-items-center justify-content-center">
+    <div>
+        <h1 class="display-4 fw-bold">🏠 Home Service Booking</h1>
+        <p class="lead">Professional home services at your fingertips!</p>
+    </div>
+</div>
+
+<!-- Services Section -->
+<section class="container my-5">
+    <h2 class="text-center fw-bold text-dark"><i class="fas fa-tools"></i> Our Services</h2>
+    <div class="row">
+        {% for service in services %}
+        <div class="col-md-4">
+            <div class="card shadow-lg text-center p-3">
+                <img src="{{ service.image.url }}" class="card-img-top rounded" alt="{{ service.name }}">
+                <div class="card-body">
+                    <h5 class="fw-bold">{{ service.name }}</h5>
+                    <p class="text-muted">${{ service.price }}</p>
+                    <a href="{% url 'service_detail' service.id %}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

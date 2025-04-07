@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="booking-card">
+        <h2 class="text-center">
+            📅 Book <span class="service-name">{{ service.name }}</span>
+        </h2>
+        <form method="post" class="booking-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-success w-100">
+                ✅ Confirm Booking
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Custom Styling -->
+<style>
+    /* General Page Styling */
+    body {
+        background: linear-gradient(to right, #ece9e6, #ffffff);
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Booking Card */
+    .booking-card {
+        max-width: 500px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .booking-card h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .service-name {
+        color: #007bff;
+    }
+
+    /* Form Styling */
+    .booking-form label {
+        font-weight: 600;
+        display: block;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    .booking-form input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .booking-form input:focus {
+        border-color: #007bff;
+        box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.3);
+        outline: none;
+    }
+
+    /* Button Styling */
+    .btn-success {
+        font-size: 18px;
+        padding: 12px;
+        border-radius: 6px;
+        background-color: #28a745;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+        transform: scale(1.05);
+    }
+</style>
+
+{% endblock %}
