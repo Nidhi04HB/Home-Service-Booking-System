@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section with Background Image -->
+<div class="hero">
+    <div class="hero-content">
+        <h1>🏡 Home Service Booking</h1>
+        <p>Professional home services at your fingertips!</p>
+    </div>
+</div>
+
+<!-- Services Section -->
+<section class="services">
+    <h2 class="section-title">🔧 Our Services</h2>
+    <div class="service-list">
+        {% for service in services %}
+            <div class="service-item">
+                <h3>{{ service.name }}</h3>
+                <p><strong>${{ service.price }}</strong></p>
+                <a href="{% url 'service_detail' service.id %}" class="btn">View Details</a>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

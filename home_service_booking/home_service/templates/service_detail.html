@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container service-detail-container">
+    <div class="card shadow-lg">
+        <div class="row g-0">
+            <!-- Service Image -->
+            <div class="col-md-4 text-center">
+                <img src="{{ service.image.url }}" alt="{{ service.name }}" class="img-fluid service-image">
+            </div>
+
+            <!-- Service Details -->
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h2 class="service-title">{{ service.name }}</h2>
+                    <p class="service-description">{{ service.description }}</p>
+                    <h4 class="service-price">💰 Price: ${{ service.price }}</h4>
+
+                    <!-- Book Now Button -->
+                    <a href="{% url 'book_service' service.id %}" class="btn btn-success btn-lg mt-3">
+                        📅 Book Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Custom Styling -->
+<style>
+    body {
+        background: #f8f9fa;
+    }
+
+    .service-detail-container {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .card {
+        border-radius: 15px;
+        overflow: hidden;
+        max-width: 800px;
+    }
+
+    .service-image {
+        max-width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .service-title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .service-description {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .service-price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #28a745;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border: none;
+        padding: 12px 20px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        display: inline-block;
+        transition: 0.3s ease;
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+    }
+</style>
+
+{% endblock %}
